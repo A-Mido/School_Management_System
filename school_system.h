@@ -333,6 +333,7 @@ void insert_ascending(struct student_node** head, struct student_data *data)
         exit(0);
     }
 
+    free(new_node);
     return;
 }
 
@@ -451,6 +452,7 @@ void insert_descending(struct student_node** head, struct student_data *data)
         exit(0);
     }
 
+    free(new_node);
     return;
 }
 /* Printing all valid nodes.
