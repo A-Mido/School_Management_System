@@ -333,7 +333,7 @@ void insert_ascending(struct student_node** head, struct student_data *data)
         exit(0);
     }
 
-    free(new_node);
+    //free(new_node);
     return;
 }
 
@@ -413,6 +413,7 @@ void insert_descending(struct student_node** head, struct student_data *data)
         strcpy(new_node->student.date_birth, data->date_birth);
         strcpy(new_node->student.id, data->id);
         strcpy(new_node->student.name, data->name);
+        printf("name : %s" ,new_node->student.name);
         strcpy(new_node->student.phone_no, data->phone_no);
         new_node->student.oa_score = data->oa_score;
         
@@ -452,7 +453,7 @@ void insert_descending(struct student_node** head, struct student_data *data)
         exit(0);
     }
 
-    free(new_node);
+    //free(new_node);
     return;
 }
 /* Printing all valid nodes.
@@ -464,8 +465,8 @@ void print_scores(struct student_node * head)
     struct student_node* current = head;
 
     while (current != NULL) {
-        printf("Student: %-20s \t", current->student.name);
-        printf("With ID: %-20s \t", current->student.id);
+        printf("Student: %-15s \t", current->student.name);
+        printf("With ID: %-15s \t", current->student.id);
         printf("Overall Score: %.2f \n", current->student.oa_score);
         current = current->next;
     }
@@ -476,7 +477,7 @@ void init_data(struct student_data * ptr)
 {
 
     // we shold generlize max count
-    for(int i = 0; i < 20; i++)
+    for(int i = 0; i < 19; i++)
     {
         ptr->add[i] = '\0';
         ptr->date_birth[i] = '\0';
